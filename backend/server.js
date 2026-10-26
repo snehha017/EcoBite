@@ -15,6 +15,10 @@ const app = express();
 app.use(cors()); // Allows your React frontend to communicate with this API
 app.use(express.json()); // Allows the server to accept JSON data in the body
 
+// ⬇️ ADD THIS NEW LINE RIGHT HERE ⬇️
+app.use('/api/auth', require('./routes/authRoutes'));
+// ⬆️ ----------------------------- ⬆️
+
 // Basic route to test the server
 app.get('/', (req, res) => {
   res.send('EcoBite API is running...');
